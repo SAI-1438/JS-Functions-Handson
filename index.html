@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Functions Handson</title>
+</head>
+<body>
+    <h1>Q1.Create one function with zero parameter having a console statement</h1>
+    <pre>function a(){
+        console.log("a");
+    }
+    a();
+    </pre>
+    <h1>Q2.Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"</h1>
+    <pre>function Add(a,b){
+        sum=a+b;
+        console.log(sum);
+    }
+    Add(1,2);
+    </pre>
+    <h1>Q3.Create one arrow function</h1>
+    <pre>let add = (a,b) => a*b;
+        console.log(add(3,4));
+    </pre>
+    <h1>Q4. 
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl ();
+    </h1>
+    <p><b>Output:</b>Undefined  :--The Output was Undefined because within the function of girl the console was<br>
+                            called before the initialization of the value of x but the memory of x was given. <br>
+                            hence, as per code execution the result will be given as there is no value defined 
+    </p> 
+    <h1>Q5. 
+        var x = 21;
+        girl ();
+        console.log(x)
+        function girl() {
+                console.log(x);
+                var x = 20;
+        };
+    </h1>
+    <p><b>Output:</b>Undefined,21  :--The Output was Undefined for the first console because the girl function was called in <br>
+                               the second line of code and as per execution context in the girl function the x was consoled <br>
+                               after the memory alocation itself but not after the value initialization. Hence, the result was Undefined as there is no value defined.<br>
+                               The second console gave the result as 21 because the value of x the console took it as from the global scope. </p>
+    <h1>Q6.
+        var x = 21;
+        a();
+        b();
+        function a() {    
+            x = 20;
+            console.log(x);
+        };
+        function b() {    
+            x = 40;
+            console.log(x);
+        };
+    </h1>
+    <p><b>Output:</b>20,40  :--The Output 20 was given by the console called in the function a<br>
+                        The Output 40 was given by the console called in the function b<br>
+                        Hence, when the both a and b functions are called in the code the results are as follows.
+    </p>
+    <h1>Q7.Write a function that accepts parameter n and returns factorial of n</h1>
+    <pre>function factorial(n){
+        let fact=1;
+        for(let i=n;i>=1;i--){
+            fact=fact*i;
+        }
+        return fact;
+        }
+        console.log(factorial(4));
+    </pre>
+    <p><b>Output:</b>24</p>
+    <h1>Q8.
+        function FindSum(a, b){
+            return a + b;
+        }
+        function DisplayData(data, batch){
+            console.log(`i am from ${data} and My batch is EA${batch}`)
+        }
+        DisplayData("PrepBytes", FindSum(10, 11));
+    </h1>
+    <p><b>Output:</b> i am from PrepBytes and My batch is EA21  :--As Second function waits for the first function so, the second function was called as a callby function.<br>
+                        Hence, as per the result the value of data was taken from the Display function and for batch value it took the funtion FindSum so the value was21<br>
+                        So, as per those data and batch values the console output was as follows "i am from PrepBytes and My batch is EA21"</p>
+    <h1>Q9.
+        Abc();
+        const Abc = function(){
+            let value = 20;
+            console.log(value);
+        }
+    </h1>
+    <p><b>Output:</b>Abc cannot be accessed before initialization :-- here the function is defined with a vairable Abc and the function is being called directly and such that<br>
+                     this type of fucntion does not follow the hoisting concept thats why it return as Error Abc cant access. </p>
+    <h1>Q10.
+        var a = 10;
+        (function (){
+            console.log(a);
+            var a = 20;
+        })();
+    </h1>
+    <p><b>Output:</b> Undefined :-- because within the function the console was called before the value is initialized but the memory alocation was done. Hence, the value was given a undefined.</p>
+    <h1>Q11.
+        const greet =  function(name){
+            return function(m){   
+                console.log(`Hi!! ${name}, ${m}`);
+            }
+        }
+        const greet_message = greet('EA21');
+        greet_message("Welcome To PrepBytes")
+    </h1>
+    <p><b>Output:</b>  Hi!! EA21, Welcome To PrepBytes :--As per the console the value of name was given by the greet funtion arguments and the value of m was given by the greet_message function arguments.<br>
+                        Hence, the output by the both functional values is as follows "Hi!! EA21, Welcome To PrepBytes".</p>
+                            
+    
+    <script src="./indesx.js"></script>
+</body>
+</html>
